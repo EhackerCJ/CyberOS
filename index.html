@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberOS v5.0 - Advanced</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BOOT SCREEN -->
+    <div id="boot-screen" class="screen active">
+        <div class="boot-container">
+            <h1 class="glitch" data-text="CyberOS.kernel">CyberOS.kernel</h1>
+            <div id="boot-log"></div>
+            <div class="loading-bar-container">
+                <div class="loading-bar" id="boot-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGIN SCREEN -->
+    <div id="login-screen" class="screen hidden">
+        <div class="glass-panel login-box">
+            <div class="avatar-container">
+                <div class="avatar-glow"></div>
+                <div class="avatar-img"></div>
+            </div>
+            <h2>AUTHORIZATION REQUIRED</h2>
+            <div class="biometric-scan" id="biometric-scan">
+                <div class="scan-line"></div>
+                <span>INITIATE BIOMETRIC SCAN</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- DESKTOP SCREEN -->
+    <div id="desktop-screen" class="screen hidden">
+        <div class="cyber-grid"></div>
+        
+        <!-- DESKTOP ICONS -->
+        <div class="desktop-icons">
+            <div class="icon" onclick="os.openApp('terminal')">
+                <div class="icon-img terminal-icon">>_</div>
+                <span>Terminal</span>
+            </div>
+            <div class="icon" onclick="os.openApp('files')">
+                <div class="icon-img files-icon">📁</div>
+                <span>Files</span>
+            </div>
+            <div class="icon" onclick="os.openApp('calc')">
+                <div class="icon-img calc-icon">∑</div>
+                <span>Calc</span>
+            </div>
+            <div class="icon" onclick="os.openApp('settings')">
+                <div class="icon-img settings-icon">⚙</div>
+                <span>Settings</span>
+            </div>
+        </div>
+
+        <!-- WINDOWS RENDER HERE -->
+        <div id="window-container"></div>
+
+        <!-- START MENU -->
+        <div id="start-menu" class="glass-panel hidden">
+            <div class="menu-header">SYSTEM_MENU</div>
+            <div class="menu-items">
+                <div onclick="os.openApp('terminal')">>_ Terminal</div>
+                <div onclick="os.openApp('files')">📁 File Explorer</div>
+                <div onclick="os.openApp('notes')">📝 Encrypted Notes</div>
+                <div onclick="os.openApp('calc')">∑ Calculator</div>
+                <div onclick="os.openApp('settings')">⚙ Control Panel</div>
+                <hr style="border-color: var(--glass-border); margin: 10px 0;">
+                <div onclick="location.reload()" style="color: #ff3333;">⏻ Reboot System</div>
+            </div>
+        </div>
+
+        <!-- TASKBAR -->
+        <div class="taskbar glass-panel">
+            <div class="start-btn cyber-btn" id="start-btn">SYS</div>
+            <div class="running-apps" id="taskbar-apps"></div>
+            <div class="sys-tray">
+                <span>NET: OK</span>
+                <span>CPU: 12%</span>
+                <span id="clock">00:00</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
